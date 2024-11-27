@@ -1,0 +1,18 @@
+<form>
+    <div>
+        <label>
+            <input type="text" name="task" placeholder="Enter a task" class="form-control">
+        </label>
+    </div>
+
+    <div>
+        <button class="btn btn-primary mt-2"
+                type="submit"
+                hx-post="/task"
+                hx-target="#taskList ul"
+                hx-swap="beforeend"
+        >
+            Add task
+        </button>
+    </div>
+</form>

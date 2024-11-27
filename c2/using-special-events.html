@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@1.9.4/dist/htmx.js"></script>
+    <title>Trigger Modifiers</title>
+    <style>
+        #scrollme {
+            margin-top: 1100px;
+            color: darkslategrey;
+            height: 150px;
+            width: 300px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+
+<!--<div hx-get="http://localhost:1330"
+     hx-target="#response"
+     hx-trigger="load delay:3s">
+    Load as the page loads
+</div>-->
+
+<!--<div hx-get="http://localhost:1330"
+     hx-target="#response"
+     hx-trigger="revealed"
+     id="scrollme">
+    Fire when I am revealed
+</div>-->
+
+<div hx-get="http://localhost:1330"
+     hx-target="#response"
+     hx-trigger="intersect threshold:1.0"
+     id="scrollme">
+    Fire when I am revealed
+</div>
+
+<div id="response"></div>
+
+</body>
+</html>

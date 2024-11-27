@@ -1,0 +1,23 @@
+<form>
+    <div>
+        <label>
+            <input type="text" name="task" value="<%= task.task %>" class="form-control">
+        </label>
+    </div>
+
+    <div>
+        <label>
+            <input type="checkbox" name="done" <%= task.done ? 'checked' : '' %>>
+        </label>
+    </div>
+
+    <div>
+        <button class="btn btn-warning mt-2"
+                type="submit"
+                hx-put="/task/<%= task.id %>"
+                hx-target="#taskList"
+        >
+            Update task
+        </button>
+    </div>
+</form>

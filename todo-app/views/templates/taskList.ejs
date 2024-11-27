@@ -1,0 +1,25 @@
+<ul>
+    <% tasks.forEach(function(taskItem) { %>
+        <li>
+            <span style="<%= taskItem.done ? 'text-decoration: line-through' : '' %>">
+                <%= taskItem.task %>
+            </span>
+
+            <% if (taskItem.done) { %>
+                <span>&#10004;</span>
+            <% } else { %>
+                <a href="#" hx-get="/get-update-form/<%= taskItem.id %>" hx-target="#taskForm">
+                    [edit]
+                </a>
+                |
+            <% } %>
+
+            <a href="#"
+               hx-delete="/task/<%= taskItem.id %>"
+               hx-target="#taskList"
+               hx-confirm="Are you sure want to delete this task?">
+                [delete]
+            </a>
+        </li>
+    <% }) %>
+</ul>
